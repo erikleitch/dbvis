@@ -10,6 +10,8 @@ right.
 Each set of rings represents the entire RiakTS cluster -- in this case
 there were three physical nodes (visualized as three concentric
 rings), each node controlling a subset of 64 total hash partitions.
+An additional outermost ring represents total activity against any
+partition, regardless of which node controls it.
 
 In the mp4 versions, partitions are lit as data (or queries) touch
 those partitions, with intensity proportional to the total number of
