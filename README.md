@@ -1,5 +1,9 @@
 # Data Flow visualizations for RiakTS
 
+<hr>
+
+## Dynamic Ring Analysis
+
 The following were visualizations I created to track data flow during
 performance benchmarking runs.  In this case multiple YCSB harness
 threads were used first to load time-ordered data into RiakTS, and
@@ -31,17 +35,20 @@ Full mp4 is here: https://github.com/erikleitch/dbvis/blob/master/mp4/YcsbQueryH
 
 <hr>
 
-This last was a slightly different visualization I created to
-visualize individual queries flowing through the system.  As before,
-the concentric rings represent physical nodes in the RiakTS cluster
-(most of the setups below were single-node tests, while two were
-three-node clusters deployed on Softlayer), but the movies are now
-tracking a single query for several hours worth of data, distributed
-across the cluster with different time quantizations.  The
-coordinating node lights up when it receives the query request and
-doesn't go dark again until the query results have been returned to
-the requestor.  During the query processing, the relevant partitions
-are lit as subqueries hit the vnodes managing those partitions.
+## Query Sonograms
+
+This last was a slightly different type of visualization I created to
+track individual queries flowing through the system.  I call them
+'query sonograms'.  As before, the concentric rings represent physical
+nodes in the RiakTS cluster (most of the setups below were single-node
+tests, while two were three-node clusters deployed on Softlayer), but
+the movies are now tracking a single query for several hours worth of
+data, distributed across the cluster with different time
+quantizations.  The coordinating node lights up when it receives the
+query request and doesn't go dark again until the query results have
+been returned to the requestor.  During the query processing, the
+relevant partitions are lit as subqueries hit the vnodes managing
+those partitions.
 
 Because each vnode managing a single partition runs as a separate
 thread, the point of this video was to demonstrate the tradeoffs
