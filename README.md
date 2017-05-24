@@ -25,6 +25,10 @@ outermost ring, as a way of tracking the integrated distribution of
 puts/queries over the course of the whole test (a uniform ring shows
 that no hot-spotting has occurred, for example).
 
+These were for two different workloads, one is cleary uniformly
+distributed around the ring, while the other was definitely not. (That
+was a bug in the test harness, which we used this tool to identify)
+
 ![YCSB Ordered Workload](https://github.com/erikleitch/dbvis/blob/master/images/YcsbQueryOrdered.png)
 
 Full mp4 is here: https://github.com/erikleitch/dbvis/blob/master/mp4/YcsbQueryOrdered.mp4
